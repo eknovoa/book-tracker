@@ -17,13 +17,13 @@ I also used [Calligraphr](https://www.calligraphr.com/en/) to create my own hand
 
 
 ### Features I want to add:
-1. Add ratings next for each book that is added.
+1. Add star ratings for each book that is added.
 2. Implement the book inventory by using a MySQL or SQLite database.
 3. Then add features such as sorting and filtering.
 
 
 
-### Instructions on How To Run This Project On Your Own.
+### Instructions on How To Run This Project On Your Own:
 ---
 1. Clone the repository
    `git clone https://github.com/eknovoa/book-tracker.git`
@@ -31,9 +31,7 @@ I also used [Calligraphr](https://www.calligraphr.com/en/) to create my own hand
    `<title>Erin's Book Tracker</title>`
 3. Change the h1 tag on line 13 to your name.
    `<h1>Erin's Book Tracker</h1>`
-4. Run the project from Visual Studio Code by right-clicking the index.html file and selecting 'Open Live with Server'
-   OR
-   Navigate to the project directory in your files using the `cd` command and then type in the command `open index.html`.
+4. Run the project from Visual Studio Code by right-clicking the index.html file and selecting 'Open Live with Server' OR Navigate to the project directory in your files using the `cd` command and then type in the command `open index.html`.
 5. Add your books to the tracker!
 
 
