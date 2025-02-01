@@ -38,3 +38,7 @@ I also used [Calligraphr](https://www.calligraphr.com/en/) to create my own hand
 
 
 ### Check out Demo Video Below:
+---
+
+https://github.com/user-attachments/assets/457bb82d-5b0d-4f1a-9863-93704593725d
+
