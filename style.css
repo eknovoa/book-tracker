@@ -6,6 +6,7 @@
 body {
   /* background-color: #FFF8E8; */
   background-color: #f6eee3;
+  margin: 0;
 }
 
 h1 {
@@ -34,29 +35,77 @@ h1, h3 {
   border: solid 2px #838e6c;
 }
 
-#remove-button {
-  background-color: #C5705D;
-  padding: 10px 15px;
-  margin: 0px 10px;
-  border: solid 2px #ad5e4c; 
-}
-
 #add-button:hover {
   cursor: pointer;
   background-color: #838e6c;
 }
 
-#remove-button:hover {
+.remove-icon:hover {
   cursor: pointer;
-  background-color: #ad5e4c;
 }
 
 #book-database-container {
-  width: 50%;
+  width: 75%;
+  max-width: 1200px;
   height: auto;
   background-color: white;
   border: solid 1px black;
   text-align: center;
-  justify-self: center;
+  margin: 0 auto;
   border-radius: 10px;
+  overflow: visible;
+}
+
+table {
+  /* justify-self: center; */
+  width: 100%;
+  border-collapse: collapse;
+}i
+
+#book-table th, #book-table td {
+  padding: 8px 20px;
+}
+
+th {
+  text-decoration: underline;
+}
+
+
+/* Adding Book Form Styling */
+
+/* Simple styling for the modal form */
+#bookForm {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  #book-database-container {
+    width: 90%;
+    overflow-x: auto;
+  }  
+  
+  #book-table {
+    width: 100%;
+  }
+
+  #book-table th, #book-table td {
+    padding: 8px 10px;
+  }
 }

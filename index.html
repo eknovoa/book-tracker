@@ -5,16 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erin's Book Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="main.js"></script>
   </head>
   <body>
     <h1>Erin's Book Tracker</h1>
     <h3>	&#10023; "She reads books as one would breathe air, to fill up and live." ~Annie Dillard" &#10023;</h3>
     <div id="book-database-container">
-      <p>This is where the books will go from database.</p>
+      <table id="book-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th># of Pages</th>
+            <th>Date Read</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+        <tfoot>
+          <!-- Summary Row will be added here-->
+        </tfoot> 
+      </table>
     </div>
+
     <div class="buttons">
-      <button id="add-button">Add Book</button>
-      <button id="remove-button">Remove Book</button>
+      <button id="add-button" onclick="showForm()">Add Book</button>
     </div>
+
+      <!-- The form modal -->
+      <div id="bookForm">
+        <div class="form-container">
+            <h3>Enter Book Details</h3>
+            <form id="addBookForm" onsubmit="submitForm(event)">
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br><br>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author" required><br><br>
+                <label for="genre">Genre:</label><br>
+                <input type="text" id="genre" name="genre" required><br><br>
+                <label for="pageNumber"># of Pages:</label><br>
+                <input type="number" id="pageNumber" name="pageNumber" required><br><br>
+                <label for="dateRead">Date Read:</label><br>
+                <input type="date" id="dateRead" name="dateRead" required><br><br>
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeForm()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      // Check if there's already book data in localStorage and load it
+      window.onload = function() {
+        loadBooks();
+      };
+    </script>
+
   </body>
 </html>
