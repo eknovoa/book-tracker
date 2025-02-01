@@ -1,4 +1,4 @@
-# Erin's Book Tracker
+# &#10023; Erin's Book Tracker &#10023;
 
 This is my first project using JavaScript. I have created a simple book tracker that allows you to add books that you have read and delete them. Even though it was a more simple project, I learned so much about JavaScript and using persistant local storage to save data across sessions to ensure that a users' information is retained after closing the browser.
 
