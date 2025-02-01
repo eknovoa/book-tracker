@@ -34,6 +34,10 @@ function addBook(title, author, genre, pageNumber, dateRead) {
 
   // Save the book to localStorage
   saveBooks();
+
+  // After adding a book, update the summary
+  updateSummary();
+
 }
 
 function removeBook(id) {
@@ -87,6 +91,7 @@ function loadBooks() {
   
   // load summary
   addSummary(bookCount, pagesCount);
+  
 }
 
 // Function to add Summary Row after loading books from localStorage
@@ -95,21 +100,41 @@ function addSummary(bookCount, pagesCount) {
   var table = document.getElementById("book-table");
   var tfoot = table.getElementsByTagName('tfoot')[0];
 
-  var newRow = tfoot.insertRow(tfoot.rows.length);
+  // If there is already a summary row, don't create another one
+  if (tfoot.rows.length === 0) {
+    var newRow = tfoot.insertRow(tfoot.rows.length);
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+  
+    // Set concent of each cell
+    cell1.colSpan = 5; // Make summary span across all columns
+    cell1.style.textAlign = "center"; // Center-align the content
 
-  var cell1 = newRow.insertCell(0);
-  var cell2 = newRow.insertCell(1);
- 
-  // Set concent of each cell
-  cell1.colSpan = 5; // Make summary span across all columns
-  cell1.style.textAlign = "center"; // Center-align the content
-
-  // Set the summary text
-  cell1.innerHTML = `No. of Books Read: ${bookCount} | No. of Pages Read: ${pagesCount}`;
-
+    // Set the summary text
+    cell1.innerHTML = `No. of Books Read: ${bookCount} | No. of Pages Read: ${pagesCount}`;
+  }
 }
 
+// Function to update the summary row (book count and total pages)
+function updateSummary() {
+  var books = JSON.parse(localStorage.getItem("books"));
 
+  var bookCount = books.length;
+  var pagesCount = 0;
+
+  books.forEach(function(book) {
+    pagesCount += Number(book.pageNumber);
+  });
+
+  // Update the existing summary row
+  var tfoot = document.getElementById("book-table").getElementsByTagName("tfoot")[0];
+  var summaryRow = tfoot.rows[0];  // The existing summary row
+
+  if (summaryRow) {
+    // Update the content of the existing summary row
+    summaryRow.cells[0].innerHTML = `No. of Books Read: ${bookCount} | No. of Pages Read: ${pagesCount}`;
+  }
+}
 
 function showForm() {
   document.getElementById("bookForm").style.display = "flex";
