@@ -45,6 +45,9 @@ function removeBook(id) {
   if (row) {
     row.parentNode.removeChild(row);
     saveBooks();  // Re-save books to localStorage after removal
+
+    // After adding a book, update the summary
+    updateSummary();
   }
 }
 
